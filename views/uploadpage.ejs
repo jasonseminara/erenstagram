@@ -1,0 +1,14 @@
+<% include ../partials/header %>
+<h1>UPLOAD IMAGE</h1>
+<div class="uploadform">
+<form action='/main' method='POST'>
+  <input type='text' name='img' value="<%= img %>" placeholder='image'><br>
+  <input type='text' name='content' value="%<= content %>" placeholder='description'><br>
+  <button>Submit</button>
+</form>
+</div>
+<div class="backtomain">
+<a href="/main">GO BACK TO MAIN PAGE</a>
+</div>
+
+<% include ../partials/footer %>

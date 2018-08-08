@@ -1,0 +1,18 @@
+<% include ../partials/header %>
+<div class="uploadimagehere">
+  <a href="/upload">UPLOAD IMAGE HERE</a>
+</div>
+<div class="mainpageset">
+  <li class="imglist">
+    <ul><% posts.forEach((post) => { %>
+      <div class="imgborders">
+        <p class="textleft"><%= post.username %></p>
+      <a href="/<%= post.id %>"><p><img src="<%= post.img %>"></p></a>
+      <p class="textleft texthide"><%= post.content %></p>
+    </div>
+      <% }); %>
+    </ul>
+  </li>
+</div>
+
+<% include ../partials/footer %>

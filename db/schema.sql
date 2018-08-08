@@ -1,0 +1,18 @@
+DROP TABLE IF EXISTS posts;
+DROP TABLE IF EXISTS users;
+
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  username VARCHAR(255) UNIQUE NOT NULL,
+  password_digest VARCHAR(255) NOT NULL,
+  date_created TIMESTAMP NOT NULL DEFAULT NOW()
+);
+
+
+CREATE TABLE posts (
+  id SERIAL PRIMARY KEY,
+  content TEXT,
+  img VARCHAR(255),
+  author integer REFERENCES users (id) NOT NULL,
+  date_created TIMESTAMP NOT NULL DEFAULT NOW()
+);
